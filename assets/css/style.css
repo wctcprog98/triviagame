@@ -3,36 +3,43 @@
     margin:0;
     padding:0; 
 }
-#container div:nth-child(even)
-{background-color: red; 
 
-}
-
-#container div:nth-child(odd)
-{background-color: green; 
-
-}
-
+body img{
+    height:100%;
+    position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  }
 #container{
 
     display:grid; 
 }
-
-#header{
-height:100px; 
+h1{
+    color:white; 
+    text-align: center; 
 }
 
-img{
+header{
+height:100px; 
+background-color: black; 
+}
+
+header img{
     width: 250px;
     height: 100px;  
   
+}
+p{
+    text-align: center;
 }
 footer img{
     
     /* float: right; */
     position: relative;
-    left: 800px; 
-    top: 400px;
+    left: 1250px; 
+   bottom: 100px; 
+   height:100px; 
 }
 .nav{
     height: 50px;
@@ -41,10 +48,14 @@ footer img{
     color: white; 
     
 }
-/* .nav p
+.content
 {
-    te
-} */
+    height: 400px; 
+}
+
+.timer{
+height: 200px; 
+}
     body {
         margin:0; /*gets rid of white space around body*/
         margin-top:16px;
