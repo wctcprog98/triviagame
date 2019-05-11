@@ -1,55 +1,89 @@
-//create variables
-var timeLeft = 30;
-var elem = document.getElementById('some_div');
-var timerId = setInterval(countdown, 1000);
 
-//create an array for looping
-//array of answers
+var correctAnswer = 0;
+var wrongAnswer = 0;
+var checked = ""; 
 
-var answersArray = ["In the circus Train", "left", "Rudyard Kipling", "Pride Rock", "Rajah"];
-var questions = [" In Dumbo, where is Mrs. Jumbo when the stork delivers her baby?", "in Peter Pan, Captain Hook had a hook on which one of his hands?", "What author wrote the book that the animated feature The Jungle Book is based on?", "In the Lion King, where does Mufasa and his family live?", "In Aladdin, what is the name of Jasmine’s pet tiger?"];
+// $("button").click(function () {
+    
+//     $("button").hide("slow", function () {
+//         $(".game").show();
+//     });
 
-//create function for onsubmit event looping through array
-$("#answer1, #answer2, #answer3, #answer4").click(function () {
+    
+    
 
+var trivia = [{
 
-    // for (var i = 0; i < 10; i++)
-    // {
+    question: "In Dumbo, where is Mrs. Jumbo when the stork delivers her baby?",
+    answers: ["the circus", "she never did", "the watering hole"],
+    correctAnswer: "In the circus train"
+}, {
+    question: "In Peter Pan, Captain Hook had a hook on which one of his hands",
+    answers: ["both", "right", "left"],
+    correctAnswer: "left"
+}, {
+    question: "What author wrote the book that the animated feature The Jungle Book is based on",
+    answers: ["both", "right", "left"],
+    correctAnswer: "Rudyard Kipling"
+}, {
+    question: "In the Lion King, where does Mufasa and his family live?",
+    answers: ["both", "right", "left"],
+    correctAnswer: "Pride Rock"
+}, {
+    question: "In Aladdin, what is the name of Jasmines pet tiger?",
+    answers: ["both", "right", "left"],
+        correctAnswer: "Rajah"
 
-    });
-    // }
+    }];
 
-    //if butttoncliked = correct button the buttonclicked is true else flase
-    //push information to html
-    //correct
-    //wrong
-    //new content
+    
 
-    //timer
+    clicked = $('radio').change();
+    console.log(clicked); 
+    //send questions to div
 
-    function countdown() {
-        if (timeLeft == -1) {
-            clearTimeout(timerId);
-            doSomething();
-        } else {
-            $("#gameTimer").text(timeLeft + ' seconds remaining'
-
-                +
-                timeLeft--);
+for (var i = 0; i < trivia.length; i++)
+{
+    $("#game").append("<h2>" + trivia[i].question + "<h2>")
+    for (var j = 0; j < trivia.length; j++)
+    {
+    $("#game").append("<input type ='radio' name= 'question-" + i + " ' value ='" + trivia[i].answers[j]+"'>" + trivia[j].answers[j])
         }
     }
-
-countdown(); 
-
-    //create an object for Quiz
-    //answers
-    //question
-
-
-
-
-
-//append9 content to html
+   
+ 
+// });
+    
+checked = $('input:radio[name=question]:checked').val();
+console.log(checked); 
+    // $("#rad").click(function(){
+    //     var $ctrl = $('<input/>').attr({ type: 'radio', name:'rad'}).addClass("rad");
+    //     $("#holder").append($ctrl);
 
 
-//create timer
+    // $("input[type='radio']").click(function () {
+     
+
+      
+
+  
+
+// userAnswer = $("input:checked");
+// console.log(userAnswer);
+
+
+
+
+
+// $(window).load(function () {
+//     // Run code
+//     $(".game").hide();
+// });
+
+
+
+
+
+
+
+
