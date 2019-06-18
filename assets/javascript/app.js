@@ -1,62 +1,56 @@
-
-var correctAnswer = 0;
-var wrongAnswer = 0;
-var checked = ""; 
-
-// $("button").click(function () {
+$("#start").on("click", function () {
+  
+    for (var i = 0; i < trivia.length; i++) {
+        $(".game").append("<h2>" + trivia[i].questions + "</h2>");
+        for (var j = 0; j < trivia[i].answers.length; j++) {
+            $(".game").append("<input type= 'radio' name= 'question-" + i + " ' value=' " + trivia[i].answers[j] + " '>" + trivia[i].answers[j])
+        }
+    }
     
-//     $("button").hide("slow", function () {
-//         $(".game").show();
-//     });
+});
 
     
-    
-
 var trivia = [{
 
-    question: "In Dumbo, where is Mrs. Jumbo when the stork delivers her baby?",
+    questions: "In Dumbo, where is Mrs. Jumbo when the stork delivers her baby?",
     answers: ["the circus", "she never did", "the watering hole"],
     correctAnswer: "In the circus train"
 }, {
-    question: "In Peter Pan, Captain Hook had a hook on which one of his hands",
+    questions: "In Peter Pan, Captain Hook had a hook on which one of his hands",
     answers: ["both", "right", "left"],
     correctAnswer: "left"
 }, {
-    question: "What author wrote the book that the animated feature The Jungle Book is based on",
+    questions: "What author wrote the book that the animated feature The Jungle Book is based on",
     answers: ["both", "right", "left"],
     correctAnswer: "Rudyard Kipling"
 }, {
-    question: "In the Lion King, where does Mufasa and his family live?",
+    questions: "In the Lion King, where does Mufasa and his family live?",
     answers: ["both", "right", "left"],
     correctAnswer: "Pride Rock"
 }, {
-    question: "In Aladdin, what is the name of Jasmines pet tiger?",
+    questions: "In Aladdin, what is the name of Jasmines pet tiger?",
     answers: ["both", "right", "left"],
         correctAnswer: "Rajah"
 
     }];
-
     
 
-    clicked = $('radio').change();
-    console.log(clicked); 
-    //send questions to div
+// var game = func
+// correct: 0,
+//     incorrect: 0; 
+// counter: 120;
+// countdown: function() {
+//     game.counter
+// }
 
-for (var i = 0; i < trivia.length; i++)
-{
-    $("#game").append("<h2>" + trivia[i].question + "<h2>")
-    for (var j = 0; j < trivia.length; j++)
-    {
-    $("#game").append("<input type ='radio' name= 'question-" + i + " ' value ='" + trivia[i].answers[j]+"'>" + trivia[j].answers[j])
-        }
-    }
-   
  
+   
+$("input[name='name_of_your_radiobutton']:checked").val();
 // });
     
-checked = $('input:radio[name=question]:checked').val();
-console.log(checked); 
-    // $("#rad").click(function(){
+// checked = $('input:radio[name=question]:checked').val();
+// console.log(checked); 
+//     // $("#rad").click(function(){
     //     var $ctrl = $('<input/>').attr({ type: 'radio', name:'rad'}).addClass("rad");
     //     $("#holder").append($ctrl);
 
