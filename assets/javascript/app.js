@@ -1,3 +1,13 @@
+
+//global variables 
+
+var answersArray = [];//hold user answers
+var correct = null; 
+var incorrect = null; 
+ 
+console.log(total);
+
+
 $("#start").on("click", function () {
   
     for (var i = 0; i < trivia.length; i++) {
@@ -12,7 +22,7 @@ $("#start").on("click", function () {
 //hide start button
 
 
-var answers = [];
+
 
 $("#start").click(function(){
     $("#start").hide();
@@ -31,36 +41,57 @@ var trivia = [{
     correctAnswer: "left"
 }, {
     questions: "What author wrote the book that the animated feature The Jungle Book is based on",
-    answers: ["both", "right", "left"],
+    answers: ["Rudyard Kipling" , "Edgar Allen Poe", "Jane Austin", "William Shakespear"],
     correctAnswer: "Rudyard Kipling"
 }, {
     questions: "In the Lion King, where does Mufasa and his family live?",
-    answers: ["both", "right", "left"],
+    answers: ["Mufasa", "In the Jungle!" , "Pride Rock", "Plymouth Rock"],
     correctAnswer: "Pride Rock"
 }, {
     questions: "In Aladdin, what is the name of Jasmines pet tiger?",
-    answers: ["both", "right", "left"],
+    answers: ["Tigger", "Shere Khan", "Rajah", "Scar", "Simba"],
         correctAnswer: "Rajah"
 
     }];
  
-var array = []; 
 
-// var answers = $('input:radio[name=question[i]]:checked').val();
-// console.log(answers); 
+//total
+var total = trivia.length; 
+console.log(total);
     
 // })
 
 
 $('.submit').on('click', function () {
-    answer($('input[name=question0 ]:checked').val());
-    console.log($('input[name=question1 ]:checked').val());
-    console.log($('input[name=question2 ]:checked').val());
-    console.log($('input[name=question3 ]:checked').val());
-    console.log($('input[name=question4 ]:checked').val());
+
+
+    //store answers
+    
+    answers = $('input[name=question0]:checked').val(); 
+    answersArray.push(answers);
+    answers1 = ($('input[name=question1]:checked').val());
+    answersArray.push(answers1);
+    answers2 = ($('input[name=question2]:checked').val());
+    answersArray.push(answers2);
+    answers3 = ($('input[name=question3]:checked').val());
+    answersArray.push(answers3);
+    answers4 = ($('input[name=question4]:checked').val());
+    answersArray.push(answers4);
+
+    console.log(answersArray); 
 })
 
+//check answers
+//create for loop checking correctAnswer 
+if (answersArray[i] == trivia[i].correctAnswer)
+{
+    
+    }
 
+
+
+//display results
+//hide/show
 
 
     //start tomer function on click
