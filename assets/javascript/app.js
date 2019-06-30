@@ -28,6 +28,8 @@ function startGame() {
     $("#start").on("click", function () {
         // hide the start button and create questions and answer radio buttons
         $("#start").hide();
+        $(".blinking").hide();
+
         for (var i = 0; i < trivia.length; i++) {
             $(".game").append("<h2>" + trivia[i].questions + "</h2>");
             for (var j = 0; j < trivia[i].answers.length; j++) {
@@ -41,9 +43,6 @@ function startGame() {
 
 
 function submitFunction(){
-    console.log("on click submit");
-
-   
     $.each($("input[name='question-0']:checked"), function () {
         //get values of checked radios and compare to correct answer
         console.log($(this).val().toString() == trivia[0].correctAnswer.toString());
@@ -107,6 +106,27 @@ function showResults() {
    //displays total correct and incorrect answers from quiz
     console.log("correct: " + correct);
     console.log("incorrect: " + incorrect);
+
+    //hide current screen 
+    $(".game").hide();
+    if (correct > 1)
+    {
+        $(".results").append("<h2>" + "you got " + correct + " answers correct" + "</h2>"); 
+    }
+    else {
+        $(".results").append("<h2>" + "you got " + correct + " answer correct" + "</h2>"); 
+    }
+  
+    if (incorrect > 1)
+    {
+        $(".results").append("<h2>" + "you got " + incorrect + " answers incorrect" + "</h2>");
+        }
+    
+    else {
+        $(".results").append("<h2>" + "you got " + incorrect + " answer incorrect" + "</h2>");
+
+    }
+
 }
 $(document).on("click",".submit",function(){
     submitFunction();
