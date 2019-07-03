@@ -13,13 +13,18 @@ h1{
       
 body{
     text-align: center; 
+    margin:0; 
 }
 
 .submit{
     position: absolute;
-    top: 600px; 
+    bottom: 100px; 
     left: 800 px;
 }
+
+.startup {
+    text-align: center;
+  }
 /* 
 blinking text */
 .blinking{
@@ -30,6 +35,27 @@ blinking text */
 	49%{	color: transparent;	}
 	50%{	color: transparent;	}
 	99%{	color:transparent;	}
-	100%{	color: #000;	}
+    100%{	color: #000;	}
+    
+
+}
+
+.timer-wrap{
+    width: 100%;
+    float: left;
+    background-color: #34495e;
+    padding: 20px 0px;
+}
+
+.timer-wrap .time {
+    display: none; 
+}
+
+.timer-wrap .timer{
+    font: bold 55px 'times new roman';
+    color: #ffffff;
+    margin: 10px auto 0px; 
+    text-align: center; 
+}
 
 
