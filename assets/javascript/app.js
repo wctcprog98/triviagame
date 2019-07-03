@@ -169,7 +169,7 @@ function timer() {
                 else if (hour == 0 && min == 0 && sec == 0) {
                     counter.eq(2).text(0);
                 }
-                if (hour == 0 && min == 0) {
+                if (hour == 0 && min == 0 && sec <= 30) {
                     $(".timer").css("color", "red");
                 
                 }
@@ -181,7 +181,9 @@ function timer() {
             time = counter.eq(0).text() + ":" + counter.eq(1).text() + ":" + counter.eq(2).text();
             if (hour == 0 && min == 0 && sec == 0) {
                 clearInterval(interval);
-                showResults(); 
+                //grab answers if submit button was not clicked
+                submitFunction(); //show results on screen
+               
             }
         }, 1000);
     });
