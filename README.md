@@ -13,6 +13,7 @@ This is a Disney trivia game that allows the user to guess the correct answer wi
 * Add more styling
 * Add sound
 * Add more questions
+* Add a reset button
 
 #Author 
 
